@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1v7e35ulasrw"]
+
+[ext_resource type="Script" path="res://src/Demo.gd" id="1_qiiip"]
+
+[node name="Demo" type="CanvasLayer" node_paths=PackedStringArray("event_to_fire")]
+script = ExtResource("1_qiiip")
+event_to_fire = NodePath("FmodEventEmitter2D")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="FireEventButton" type="Button" parent="PanelContainer/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "Fire Event"
+
+[node name="FmodListener2D" type="FmodListener2D" parent="."]
+is_locked = true
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/OneTwoThree"
+event_guid = "{2451d1ab-8e2f-4029-91f4-f8a2be732af2}"
+autoplay = true
+event_parameter/Pitch/id = 3328390767744586506
+event_parameter/Pitch/value = 0.5
+event_parameter/Pitch/min_value = 0.0
+event_parameter/Pitch/max_value = 1.0
+event_parameter/Pitch/default_value = 0.0
+event_parameter/Pitch/variant_type = 3
